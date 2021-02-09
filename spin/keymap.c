@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "print.h"
 
 #define _BASE       0
 #define _NUMPAD     1
@@ -6,7 +7,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
-                KC_F22, KC_F23, KC_F24, RGB_TOG,
+                KC_F22, KC_F23, KC_F24, KC_NO,
                 KC_F20, KC_F21, KC_F22, TO(_NUMPAD),
                 KC_MEDIA_PREV_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK, TO(_WORKSPACE),
                 KC_NO, KC_NO, KC_NO
@@ -28,19 +29,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
         case _BASE:
-            setrgb(RGB_WHITE, &led[0]); 
+            setrgb(RGB_PURPLE, &led[0]); 
             setrgb(0, 0, 0, &led[1]);
             setrgb(0, 0, 0, &led[2]);
             break;
         case _NUMPAD:
             setrgb(0, 0, 0, &led[0]); 
-            setrgb(RGB_WHITE, &led[1]);
+            setrgb(RGB_PURPLE, &led[1]);
             setrgb(0, 0, 0, &led[2]);
             break;
         case _WORKSPACE:
             setrgb(0, 0, 0, &led[0]);
             setrgb(0, 0, 0, &led[1]);
-            setrgb(RGB_WHITE, &led[2]);
+            setrgb(RGB_PURPLE, &led[2]);
             break;
     }
     rgblight_set();
@@ -48,7 +49,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 
 void keyboard_post_init_user(void) {
-    setrgb(RGB_WHITE, &led[0]); 
+    setrgb(RGB_PURPLE, &led[0]); 
     setrgb(0, 0, 0, &led[1]);
     setrgb(0, 0, 0, &led[2]);
     rgblight_set();
