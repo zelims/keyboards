@@ -10,7 +10,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 KC_F22, KC_F23, KC_F24, KC_NO,
                 KC_F20, KC_F21, KC_F22, TO(_NUMPAD),
                 KC_MEDIA_PREV_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK, TO(_WORKSPACE),
-                KC_NO, KC_NO, KC_NO
+                RCTL(KC_INS), RCTL(KC_HOME), KC_NO
                 ),
     [_NUMPAD] = LAYOUT(/* numpad */
                 KC_KP_0, KC_KP_PLUS, KC_KP_SLASH, TO(_BASE),
