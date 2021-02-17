@@ -97,9 +97,9 @@ void encoder_update_user(uint8_t index, bool clockwise) {
             case _BASE:
             case _NUMPAD:
                 if (clockwise) {
-                    tap_code(KC_VOLU);
+                    tap_code(KC_UP);
                 } else {
-                    tap_code(KC_VOLD);
+                    tap_code(KC_DOWN);
                 }
                 break;
             case _WORKSPACE:
